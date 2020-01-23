@@ -1,22 +1,24 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Login from '../views/Login'
+import Zxllogin from '../views/Zxllogin'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: Home
+    redirect: '/Zxllogin'
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    path: '/login',
+    // 这里name的作用可以用于指定那个router-view来渲染组件，也可以不指定view
+    // name: 'login',
+    component: Login
+  },
+  {
+    path: '/Zxllogin',
+    component: Zxllogin
   }
 ]
 
